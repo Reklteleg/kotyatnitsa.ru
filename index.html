@@ -9,26 +9,26 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      width: 100vw;
+      height: 100%;
+      width: 100%;
       background-color: #000;
-      background-image: url('kotyatnitsa_background.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
       overflow: hidden;
       font-family: 'Comfortaa', sans-serif;
-      position: relative;
-      touch-action: manipulation;
     }
 
-    .hint {
-      position: absolute;
-      top: 8px;
+    .wrapper {
+      position: relative;
       width: 100%;
-      text-align: center;
-      text-shadow: 0 0 6px #000;
-      z-index: 5;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrapper img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
     }
 
     .lapka {
@@ -40,15 +40,26 @@
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
-      animation: pulse 1.3s infinite;
-      top: 51%;
-      left: 59%;
+      animation: pulse 1.2s infinite ease-in-out;
+
+      /* Позиция как проценты относительно изображения */
+      top: 64%;
+      left: 64%;
       transform: translate(-50%, -50%);
     }
 
     @keyframes pulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(0.9); }
-      50%      { transform: translate(-50%, -50%) scale(1.24); }
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50%      { transform: translate(-50%, -50%) scale(1.22); }
+    }
+
+    .hint {
+      position: absolute;
+      top: 10px;
+      width: 100%;
+      text-align: center;
+      text-shadow: 0 0 6px #000;
+      z-index: 5;
     }
 
     audio { display: none; }
@@ -62,12 +73,14 @@
     </span>
   </div>
 
-  <a href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')">
-    <div class="lapka" id="lapka"></div>
-  </a>
+  <div class="wrapper">
+    <img src="kotyatnitsa_background.png" alt="Фон с котом">
+    <a href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')">
+      <div class="lapka" id="lapka"></div>
+    </a>
+  </div>
 
   <audio id="meow" src="https://www.fesliyanstudios.com/play-mp3/6965"></audio>
-
   <script>
     document.getElementById('lapka').addEventListener('click', () => {
       document.getElementById('meow').play();
