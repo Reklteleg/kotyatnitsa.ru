@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>КОТЯТНИЦА — Поймай лапку!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: #000;
+      background-image: url('kotyatnitsa_background.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+      font-family: 'Comfortaa', sans-serif;
+      position: relative;
+      touch-action: manipulation;
+    }
+
+    .hint {
+      position: absolute;
+      top: 8px;
+      width: 100%;
+      text-align: center;
+      text-shadow: 0 0 6px #000;
+      z-index: 5;
+    }
+
+    .lapka {
+      position: absolute;
+      width: 100px;
+      height: 140px;
+      background-image: url('lapka_transparent.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      animation: pulse 1.3s infinite;
+      top: 51%;
+      left: 59%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(0.9); }
+      50%      { transform: translate(-50%, -50%) scale(1.24); }
+    }
+
+    audio { display: none; }
+  </style>
+</head>
+<body>
+  <div class="hint">
+    <img src="https://telegram.org/img/t_logo.png" alt="TG" style="height: 18px; vertical-align: middle; margin-right: 4px;">
+    <span style="font-size: 1.1em;">
+      Отборные видео с котами — <strong>телеграм-канал <span style="color:#FFD700;">КОТЯТНИЦА</span> 😺</strong>
+    </span>
+  </div>
+
+  <a href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')">
+    <div class="lapka" id="lapka"></div>
+  </a>
+
+  <audio id="meow" src="https://www.fesliyanstudios.com/play-mp3/6965"></audio>
+
+  <script>
+    document.getElementById('lapka').addEventListener('click', () => {
+      document.getElementById('meow').play();
+    });
+  </script>
+
+  <!-- Яндекс.Метрика -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+      k.async=1; k.src=r; a.parentNode.insertBefore(k,a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(101949561, "init", {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/101949561" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+</body>
+</html>
