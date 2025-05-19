@@ -29,26 +29,6 @@
       text-align: center;
       text-shadow: 0 0 6px #000;
       z-index: 5;
-    }
-
-    .lapka {
-      position: absolute;
-      width: 100px;
-      height: 140px;
-      background-image: url('lapka_transparent.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      cursor: pointer;
-      animation: pulse 1.3s infinite;
-      top: 51%;
-      left: 59%;
-      transform: translate(-50%, -50%);
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: translate(-50%, -50%) scale(0.9); }
-      50%      { transform: translate(-50%, -50%) scale(1.24); }
     }*/
 
     html, body {
@@ -64,7 +44,6 @@
 
     .hint {
       height: 100dvh;
-/*      width: fit-content;*/
       background-color: #ACBBBB;
       background-image: url('kotyatnitsa_background.png');
       background-size: contain;
@@ -76,25 +55,55 @@
     .title {
       font-size: 0.9em;
       z-index: 1;
-      position: absolute;
       font-family: 'Comfortaa', sans-serif;
-      padding: 0 0.8rem;
+      padding: 0.4rem 0.8rem 0 0.8rem;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;  
+      position: absolute;  
+    }
+    .logo_t {
+      height: 18px;
+      z-index: 2;
+    }
+
+    .hint a {
+      top: 52%;
+      left: 76%;
+      width: 75px;
+      height: 95px;
+      background-image: url('lapka_transparent.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      animation: pulse 1.3s infinite;
+      position: absolute;
+    }
+    .lapka {
+
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(0.9); }
+      50%      { transform: translate(-50%, -50%) scale(1.24); }
     }
   </style>
 </head>
 <body>
-    <!-- <img src="https://telegram.org/img/t_logo.png" alt="TG" style="height: 18px; vertical-align: middle; margin-right: 4px;"> -->
-     <p class="title">
-      Отборные видео с котами — <strong>телеграм-канал</strong>
-    </p>
+     <div class="title">
+      <img src="https://telegram.org/img/t_logo.png" alt="TG" class="logo_t" >
+      <div>Отборные видео с котами — <strong>телеграм-канал</strong></div>
+    </div>
 <!--     <p class="title">
       Отборные видео с котами — <strong>телеграм-канал <span style="color:#FFD700;">КОТЯТНИЦА</span> 😺</strong>
     </p> -->
-  <!-- <a href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')"> -->
-    <!-- <div class="lapka" id="lapka"></div> -->
-  <!-- </a> -->
-  <div class="hint"></div>
 
+  <div class="hint">
+    <a href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')">
+      <!-- <div class="lapka" id="lapka"></div> -->
+    </a>
+  </div>
 
 
   <script>
