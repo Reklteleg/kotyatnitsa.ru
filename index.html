@@ -6,83 +6,45 @@
   <title>КОТЯТНИЦА — Поймай лапку!</title>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
   <style>
-   /* html, body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      width: 100vw;
-      background-color: #000;
-      background-image: url('kotyatnitsa_background.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      overflow: hidden;
-      font-family: 'Comfortaa', sans-serif;
-      position: relative;
-      touch-action: manipulation;
-    }
-
-    .hint {
-      position: absolute;
-      top: 8px;
-      width: 100%;
-      text-align: center;
-      text-shadow: 0 0 6px #000;
-      z-index: 5;
-    }*/
-
     html, body {
       margin: 0;
       padding: 0;
-/*      height: 100%;*/
-/*      width: 100vw;*/
-/*    overflow: hidden;*/
-/*    font-family: 'Comfortaa', sans-serif;*/
-/*    position: relative;*/
-/*    touch-action: manipulation;*/
-    }
-
-    .hint {
-    height: 100vh;
-    background-color: #ACBBBB;
-    background-image: url(kotyatnitsa_background.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    /* background-position: 19px; */
-    background-position-y: 22px;
-    position: relative;
-    z-index: 0;
-    }
-    .title {
-      font-size: 0.9em;
-      z-index: 1;
+      height: 100%;
       font-family: 'Comfortaa', sans-serif;
-      padding: 0.4rem 0.8rem 0 0.8rem;
+      touch-action: manipulation;
+      background-color: #CAD9D2;
       display: flex;
-      gap: 0.4rem;
-      align-items: center;  
-      position: absolute;  
-    }
-    .logo_t {
-      height: 18px;
-      z-index: 2;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
-    .hint a {
-      top: 52%;
-      left: 76%;
+    .wrapper {
+      position: relative;
+      width: 390px;
+      height: 844px;
+    }
+
+    .bg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lapka {
+      position: absolute;
+      top: 489px;
+      left: 287px;
       width: 75px;
       height: 95px;
-      background-image: url('lapka_transparent.png');
+      transform: translate(-50%, -50%);
+      background-image: url(lapka_transparent.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
       animation: pulse 1.3s infinite;
-      position: absolute;
-    }
-    .lapka {
-
     }
 
     @keyframes pulse {
@@ -92,26 +54,10 @@
   </style>
 </head>
 <body>
-     <div class="title">
-      <img src="https://telegram.org/img/t_logo.png" alt="TG" class="logo_t" >
-      <div>Отборные видео с котами — <strong>телеграм-канал</strong></div>
-    </div>
-<!--     <p class="title">
-      Отборные видео с котами — <strong>телеграм-канал <span style="color:#FFD700;">КОТЯТНИЦА</span> 😺</strong>
-    </p> -->
-
-  <div class="hint">
-    <a href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')">
-      <!-- <div class="lapka" id="lapka"></div> -->
-    </a>
-  </div>
-
-
-  <script>
-    document.getElementById('lapka').addEventListener('click', () => {
-      document.getElementById('meow').play();
-    });
-  </script>
+<div class="wrapper">
+  <img src="bg.jpg" class="bg" alt="background" />
+  <a class="lapka" href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')"></a>
+</div>
 
   <!-- Яндекс.Метрика -->
   <script type="text/javascript">
