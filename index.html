@@ -12,7 +12,6 @@
       height: 100%;
       font-family: 'Comfortaa', sans-serif;
       touch-action: manipulation;
-      /*background-color: #CAD9D2;*/
       background-image: url('fon.jpg');
       display: flex;
       justify-content: center;
@@ -53,11 +52,6 @@
       0%, 100% { transform: translate(-50%, -50%) scale(0.9); }
       50%      { transform: translate(-50%, -50%) scale(1.24); }
     }
-    /*@media (max-width: 600px) {*/
-    /*  .wrapper {*/
-    /*    transform: scale(0.8);*/
-    /*  }*/
-    /*}*/
   </style>
 </head>
 <body>
@@ -66,24 +60,31 @@
   <a class="lapka" href="https://t.me/kotyatnitsa" onclick="ym(101949561,'reachGoal','tg_click')"></a>
 </div>
 
-  <!-- Метрика -->
-  <script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0];
-      k.async=1; k.src=r; a.parentNode.insertBefore(k,a);
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<!-- Редирект через 4 секунды -->
+<script>
+  setTimeout(function() {
+    window.location.href = "https://t.me/kotyatnitsa";
+  }, 4000);
+</script>
 
-    ym(101949561, "init", {
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      webvisor: true
-    });
-  </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/101949561" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
+<!-- Метрика -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0];
+    k.async=1; k.src=r; a.parentNode.insertBefore(k,a);
+  })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+  ym(101949561, "init", {
+    clickmap: true,
+    trackLinks: true,
+    accurateTrackBounce: true,
+    webvisor: true
+  });
+</script>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/101949561" style="position:absolute; left:-9999px;" alt="" /></div>
+</noscript>
 </body>
 </html>
