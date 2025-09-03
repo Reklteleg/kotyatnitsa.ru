@@ -53,11 +53,28 @@
       50%      { transform: translate(-50%, -50%) scale(1.24); }
     }
   </style>
+
+  <!-- VK Pixel -->
+  <script type="text/javascript">
+  !function(){
+    var t=document.createElement("script");
+    t.type="text/javascript"; t.async=!0;
+    t.src="https://vk.com/js/api/openapi.js?169";
+    t.onload=function(){
+      VK.Retargeting.Init("3688110"); // замени на свой ID
+      VK.Retargeting.Hit();
+    };
+    document.head.appendChild(t);
+  }();
+  </script>
+  <noscript><img src="https://vk.com/rtrg?p=YOUR_PIXEL_ID" style="position:fixed; left:-999px;" alt=""/></noscript>
+  <!-- /VK Pixel -->
+
 </head>
 <body>
 <div class="wrapper">
   <img src="bg.jpg" class="bg" alt="background" />
-  <a class="lapka" href="https://t.me/+O0tp4Z6ydSM2Njky" onclick="ym(101949561,'reachGoal','tg_click')"></a>
+  <a class="lapka" href="https://t.me/+O0tp4Z6ydSM2Njky" onclick="trackTGClick()"></a>
 </div>
 
 <!-- Редирект через 9 секунд -->
@@ -65,6 +82,16 @@
   setTimeout(function() {
     window.location.href = "https://t.me/kotyatnitsa/481";
   }, 9000);
+
+  // Отправка события в VK + Метрика при клике на лапку
+  function trackTGClick(){
+    if(window.VK && VK.Retargeting){
+      VK.Retargeting.Event('go_tg');
+    }
+    if(window.ym){
+      ym(101949561,'reachGoal','tg_click');
+    }
+  }
 </script>
 
 <!-- Метрика -->
